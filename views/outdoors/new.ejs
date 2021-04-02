@@ -1,0 +1,46 @@
+<%- include("../partials/head") %> 
+<p>outdoor events</p>
+<hr>
+<div>Available events:
+  <% for(e of events) { %>
+    <p>Name: <%= e.name %></p> 
+    <p>Description: <%= e.description %></p> 
+    <p>Time: <%= e.date %></p> 
+    <p>Category: <%= e.type %></p> 
+    <p>Remaining spots: <%= e.maxspots %></p>
+    <form method="POST" action="outdoor/delete/<%=e.id%>">
+      <button type="submit">Delete event</button><br>
+    </form>
+  <% } %>
+  <br>
+</div>
+<hr>
+
+<div>Create and host your own event:
+  <form action="/outdoor/new" method="POST">
+    <label>Enter the event Name:
+      <input type="text" name="name">
+    </label><br>
+    <label>Description of event:
+      <textarea name="description" rows="4" cols="50"></textarea>
+    </label><br>
+    <label>Enter date of event:
+      <input type="datetime-local" name="date">
+    </label><br>
+    <label>Enter type of event:
+      <select name="type">
+        <option value="picnic">Picnic/Park get together</option>
+        <option value="games">Games</option>
+        <option value="crafts">Crafts/Knitting</option>
+        <option value="movies">Movies</option>
+      </select>
+    </label><br>
+    <label>Enter max number of people who can attend:
+      <input type="number" name="maxspots">
+    </label><br>
+    <input type="submit" value="Create Event">
+  </form>
+</div>
+
+</body>
+</html>
