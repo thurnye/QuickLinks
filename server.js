@@ -11,9 +11,7 @@ var spotifyRouter = require("./routes/spotify.js");
 
 var app = express();
 
-var client_id = " d690e0fda81643daa48da4d0d0bc9131"; // Your client id
-var client_secret = "3dbac821cb054b398a0af5ebfd0baac6"; // Your secret
-var redirect_uri = "REDIRECT_URI"; // Your redirect uri
+
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
