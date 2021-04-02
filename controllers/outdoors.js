@@ -10,6 +10,7 @@ async function outdoors(req, res) {
     let outDoorEvents = await Outdoor.find()
     res.render("outdoors/new", {
         "events": outDoorEvents,
+        user: req.user,
     })
 }
 

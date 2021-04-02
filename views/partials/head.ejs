@@ -8,10 +8,11 @@
     <h1>QuickLinks</h1>
     <nav>
       <a href="/">Main</a>
-        <!-- will be an if to check if user -->
+        <% if (user) { %>
+          <a href="/outdoor">outdoor events</a>
           <a href="/logout/">Log Out</a>
-        <!-- will be an else -->
+        <% } else { %>
           <a href="/auth/google/">Login</a>
-        <!-- a test link for outdoor events -->
-        <a href="/outdoor">outdoor events</a>
+        <% } %>
+        
     </nav>
