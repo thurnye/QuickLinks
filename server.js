@@ -13,6 +13,8 @@ var usersRouter = require("./routes/users");
 var spotifyRouter = require("./routes/spotify.js");
 
 var app = express();
+require("./config/database");
+require("./config/passport");
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
