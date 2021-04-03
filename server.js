@@ -11,6 +11,11 @@ var spotifyRouter = require("./routes/spotify.js");
 
 var app = express();
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> f4061883495ecf079f2e75918e87fcc94451a5ae
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
