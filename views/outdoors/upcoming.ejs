@@ -1,8 +1,34 @@
 <%- include("../partials/head") %> 
-<p>outdoor events</p>
-<hr>
+<br>
 <div>Upcoming events</div>
 <hr>
 
+<%if (user) { %>
+
+    <% if (upcoming.length > 0 ){ %> 
+      <div>
+        <% upcoming.forEach(el => { %>
+            <p>Name: <%= el.event.name %></p> 
+            <p>Time: <%= el.event.date.toString()%></p> 
+        <% }) %>
+      </div>
+      <hr>
+    <% }else { %> 
+      <%# User logged in but no event %> 
+      <div >
+        
+      </div>
+    <% } %> 
+
+
+<% } else { %>
+    <%# User not logged in  %> 
+       
+    <div> Please sign in with <a href="/auth/google"> google</a> to see your upcoming events</div>
+                
+<% } %>
+
+
+        
 </body>
 </html>
