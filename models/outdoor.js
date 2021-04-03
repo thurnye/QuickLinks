@@ -8,7 +8,16 @@ const outdoorSchema = new Schema({
     date: Date,
     type: String,
     maxspots: Number,
-}, {
+    // 1:M relations ///an event has many attendants.
+    Attendant: [{
+        user: {
+            type: Schema.Types.ObjectId,
+            required: true,
+            ref: 'User'
+        }
+    }],
+}, 
+{
     timestamps: true
 })
 

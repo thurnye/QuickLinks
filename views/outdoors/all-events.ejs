@@ -1,0 +1,25 @@
+<%- include("../partials/head") %> 
+<p>outdoor events</p>
+<hr>
+<div>Available events:
+  <% for(e of events) { %>
+    <p>Name: <%= e.name %></p> 
+    <p>Description: <%= e.description %></p> 
+    <p>Time: <%= e.date %></p> 
+    <p>Category: <%= e.type %></p> 
+    <p>Remaining spots: <%= e.maxspots %></p>
+    <% if (user) { %>
+        <form method="POST" action="/outdoor/my-upcoming-event/<%=e.id%>">
+            <button type="submit">Going</button>
+          </form>
+      <% } else { %>
+        <a href="/auth/google/">Add Event</a>
+      <% } %>
+    
+  <% } %>
+  <br>
+</div>
+<hr>
+
+</body>
+</html>

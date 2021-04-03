@@ -5,7 +5,15 @@ const Schema = mongoose.Schema;
 var userSchema = new mongoose.Schema({
     name: String,
     email: String,
-    googleId: String
+    googleId: String,
+    // a user can belong to many events. 
+    upcoming: [{
+      event: {
+        type: Schema.Types.ObjectId,
+        required: true,
+        ref: 'Outdoor'
+      }
+    }]
   }, {
     timestamps: true
   });
