@@ -8,8 +8,10 @@
     <h1>QuickLinks</h1>
     <nav>
       <a href="/">Main</a>
+      <a href="/stay_connected/all_events"> All Events</a>
         <% if (user) { %>
-          <a href="/outdoor">outdoor events</a>
+          <a href="/outdoor"> My Event</a>
+          <a href="/outdoor/events/upcoming-events"> Upcoming Events</a>
           <a href="/logout/">Log Out</a>
         <% } else { %>
           <a href="/auth/google/">Login</a>
